@@ -55,7 +55,7 @@
   ### service
   - screen 별로 디랙토리 나누기
 
-# Project tree 예시
+## Project tree 예시
 
 ```data
 ├── config
@@ -70,6 +70,7 @@
     ├── textbox
     │   └── circular_textbox.dart
     └── buttons
+```
 
-# Branch 전략
+## Branch 전략
 - Git Flow (?) -> main, develop, feature, hotfix, release
