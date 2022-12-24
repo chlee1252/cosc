@@ -36,6 +36,9 @@ dependencies:
   table_calendar: 3.0.8
   syncfusion_flutter_calendar: ^20.3.61
 
+  # flutter font
+  google_fonts: ^3.0.1
+
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +47,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/social/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
