@@ -14,7 +14,6 @@ class SocialLogin extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: _createButtons(),
-        // children: _createButtons(),
       ),
     );
   }

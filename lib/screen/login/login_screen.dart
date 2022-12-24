@@ -25,7 +25,6 @@ class LoginScreen extends StatelessWidget {
               height: 50.0,
             ),
             SocialLogin(),
-            // const SocialLogin(),
           ],
         ),
       ),
