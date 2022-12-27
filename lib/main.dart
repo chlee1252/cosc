@@ -1,7 +1,8 @@
+import 'package:cosc/constants.dart';
+import 'package:cosc/screen/login/login_screen.dart';
 import 'package:cosc/screen/settings/setting_screen.dart';
 import 'package:cosc/screen/splash/splash_screen.dart';
 import 'package:cosc/screen/testHome/TestHomeScreen.dart';
-import 'package:cosc/screen/testLogin/TestLoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,16 +18,15 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: themeColor,
       ),
-      initialRoute: '/settings',// TODO : 최종 push 할 때 '/' 로 원복
+      initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => SplashScreen()),
-        GetPage(name: '/login', page: () => const TestLoginScreen()),
+        GetPage(name: '/login', page: () => const LoginScreen()),
         GetPage(name: '/home', page: () => const TestHomeScreen()),
         GetPage(name: '/settings', page: () => const SettingScreen()),
       ],
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
