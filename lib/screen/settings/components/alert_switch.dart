@@ -1,3 +1,4 @@
+import 'package:cosc/screen/settings/components/setting_space_between_row.dart';
 import 'package:cosc/screen/settings/components/setting_text.dart';
 import 'package:flutter/material.dart';
 import 'package:cosc/constants.dart';
@@ -19,18 +20,15 @@ class _AlertSwitchState extends State<AlertSwitch> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SettingText('알림설정'),
-          Switch.adaptive(
-            value: alertState,
-            onChanged: (value) => toggleAlert(value),
-            materialTapTargetSize: MaterialTapTargetSize.padded,
-            trackColor: MaterialStateProperty.all(Colors.black),
-            activeColor: highlightColor,
-          )
-        ]
+    return SettingSpaceBetweenRow(
+      leftSideWidget: const SettingText('알림설정'),
+      rightSideWidget: Switch.adaptive(
+        value: alertState,
+        onChanged: (value) => toggleAlert(value),
+        materialTapTargetSize: MaterialTapTargetSize.padded,
+        trackColor: MaterialStateProperty.all(Colors.black),
+        activeColor: highlightColor,
+      ),
     );
   }
 }
