@@ -27,7 +27,7 @@ class SettingScreen extends StatelessWidget {
   }
   // route 시키는 메서드 하나
   void route() {
-
+    //TODO : 라우팅 할 버튼 확실히 정한 뒤에 라우팅 부분 기능 및 화면 추가
   }
 
   // Dialog 띄우는 메서드 하나
