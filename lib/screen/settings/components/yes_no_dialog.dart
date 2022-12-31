@@ -30,7 +30,7 @@ class YesNoDialog extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.end,
-        children: <Widget>[
+        children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
             child: Text(question, style: const TextStyle( fontSize: 25)),
