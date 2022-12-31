@@ -15,7 +15,8 @@ class SettingBox extends StatelessWidget {
     return InkWell(
       onTap: onTapCallback,
       child: Container(
-        padding: const EdgeInsets.fromLTRB(containerPaddingLeftRight, containerPaddingTopBottom, containerPaddingLeftRight, containerPaddingTopBottom),
+        padding: const EdgeInsets.symmetric(vertical: containerPaddingTopBottom, horizontal: containerPaddingLeftRight),
+        // padding: const EdgeInsets.fromLTRB(containerPaddingLeftRight, containerPaddingTopBottom, containerPaddingLeftRight, containerPaddingTopBottom),
         width: double.infinity,
         height: 80,
         color: themeColor,
