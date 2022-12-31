@@ -9,7 +9,7 @@ class SettingText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       data!,
-      style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 24, color: Colors.white),
+      style: const TextStyle(fontSize: 24, color: Colors.white),
     );
   }
 }
