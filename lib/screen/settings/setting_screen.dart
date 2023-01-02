@@ -11,8 +11,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
           children: [
             SettingBox(onTapCallback: () {}, child: const AlertSwitch()),
             SettingBox(onTapCallback: () {route();}, child: const SettingText('관심 카테고리 설정')),
