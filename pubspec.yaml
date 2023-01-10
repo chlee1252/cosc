@@ -42,6 +42,9 @@ dependencies:
   # flutter font
   google_fonts: ^3.0.1
 
+  # UI
+  percent_indicator: ^4.2.2
+
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +55,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/social/
+    - assets/image/
     - pubspec.yaml
 
   # To add assets to your application, add an assets section, like this:
