@@ -1,3 +1,4 @@
+import 'package:cosc/screen/calendar/components/calendar.dart';
 import 'package:flutter/material.dart';
 
 class CalendarScreen extends StatelessWidget {
@@ -11,9 +12,9 @@ class CalendarScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children:  [
             Center(
-              child: Text("hello im calendar"),
+              child: Calendar(title: "Cosc"),
             ),
             SizedBox(
               height: 50.0,
@@ -25,3 +26,4 @@ class CalendarScreen extends StatelessWidget {
 
   }
 }
+

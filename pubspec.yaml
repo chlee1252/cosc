@@ -41,6 +41,7 @@ dependencies:
 
   # flutter font
   google_fonts: ^3.0.1
+  flutter_calendar_carousel: ^2.4.1
 
 
 dev_dependencies:
