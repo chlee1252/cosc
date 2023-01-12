@@ -1,3 +1,4 @@
+import 'package:cosc/constants.dart';
 import 'package:cosc/screen/calendar/components/calendar.dart';
 import 'package:flutter/material.dart';
 
@@ -7,8 +8,12 @@ class CalendarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          color: secondThemeColor,
+          borderRadius: BorderRadius.circular(20),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -16,8 +21,11 @@ class CalendarScreen extends StatelessWidget {
             Center(
               child: Calendar(title: "Cosc"),
             ),
-            SizedBox(
-              height: 50.0,
+            Container(
+              child: Text("AD"),
+              height: 200.0,
+              width: double.infinity,
+              color: thirdThemeColor,
             ),
           ],
         ),
