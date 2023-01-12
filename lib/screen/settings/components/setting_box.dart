@@ -19,7 +19,7 @@ class SettingBox extends StatelessWidget {
         // padding: const EdgeInsets.fromLTRB(containerPaddingLeftRight, containerPaddingTopBottom, containerPaddingLeftRight, containerPaddingTopBottom),
         width: double.infinity,
         height: 80,
-        color: themeColor,
+        color: firstThemeColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
