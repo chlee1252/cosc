@@ -1,6 +1,6 @@
 import 'package:cosc/constants.dart';
+import 'package:cosc/screen/main/components/main_bottom_sheet.dart';
 import 'package:cosc/screen/main/components/profile.dart';
-import 'package:cosc/screen/main/components/question_button.dart';
 import 'package:cosc/widget/cosc_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String userid = "CoScID";
+    String language = "Python";
     int total = 120;
     int score = 82;
     int percent = (score / total * 100) ~/ 1;
@@ -103,53 +104,10 @@ class HomeScreen extends StatelessWidget {
                   vertical: 10.0,
                   horizontal: 10.0,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/image/robot.png",
-                      width: 167,
-                      height: 167,
-                    ),
-                    const SizedBox(height: 20.0),
-                    FittedBox(
-                      child: Text(
-                        "안녕하세요, $userid님!",
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 35.0,
-                        ),
-                      ),
-                    ),
-                    FittedBox(
-                      child: Text(
-                        "오늘의 퀴즈가 $userid님을 기다려요.\n도전해볼까요?",
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 40.0,
-                        horizontal: 20.0,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          QuestionButton(onTap: () {}),
-                          QuestionButton(onTap: () {}),
-                          QuestionButton(onTap: () {}),
-                        ],
-                      ),
-                    ),
-                  ],
+                child: MainBottomSheet(
+                  language: "Python",
+                  userid: userid,
+                  completed: false,
                 ),
               ),
             ),

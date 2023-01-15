@@ -1,5 +1,5 @@
-import 'package:cosc/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class QuestionButton extends StatelessWidget {
   const QuestionButton({Key? key, required this.onTap}) : super(key: key);
@@ -10,17 +10,12 @@ class QuestionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: CircleAvatar(
-        radius: 35.0,
-        backgroundColor: redAccentColor,
-        child: const Text(
-          "?",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 50.0,
-          ),
-        ),
+      child: Lottie.asset(
+        "assets/lottie/question_mark.json",
+        width: 90.0,
+        height: 90.0,
+        fit: BoxFit.fill,
+        repeat: false,
       ),
     );
   }
