@@ -2,6 +2,7 @@ import 'package:cosc/constants.dart';
 import 'package:cosc/screen/main/components/main_bottom_sheet.dart';
 import 'package:cosc/screen/main/components/profile.dart';
 import 'package:cosc/widget/cosc_appbar.dart';
+import 'package:cosc/widget/expanded_rounded_card.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -89,27 +90,11 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 15.0,
           ),
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: secondThemeColor,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(40.0),
-                  topRight: Radius.circular(40.0),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 10.0,
-                  horizontal: 10.0,
-                ),
-                child: MainBottomSheet(
-                  language: "Python",
-                  userid: userid,
-                  completed: false,
-                ),
-              ),
+          ExpandedRoundedCard(
+            child: MainBottomSheet(
+              language: "Python",
+              userid: userid,
+              completed: false,
             ),
           ),
         ],
