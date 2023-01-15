@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: firstThemeColor,
       ),
-      initialRoute: '/home',
+      initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => SplashScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
