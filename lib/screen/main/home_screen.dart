@@ -10,10 +10,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String userid = "CoScID";
-    String language = "Python";
-    int total = 120;
-    int score = 82;
-    int percent = (score / total * 100) ~/ 1;
     return Scaffold(
       appBar: const CoscAppBar(),
       body: Column(
