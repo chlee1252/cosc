@@ -43,6 +43,10 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_calendar_carousel: ^2.4.1
 
+  # UI
+  percent_indicator: ^4.2.2
+  lottie: ^1.4.2
+
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +57,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/social/
+    - assets/image/
+    - assets/lottie/
     - pubspec.yaml
 
   # To add assets to your application, add an assets section, like this:
