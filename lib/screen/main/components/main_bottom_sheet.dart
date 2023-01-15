@@ -24,6 +24,7 @@ class MainBottomSheet extends StatelessWidget {
         : "오늘의 $language 퀴즈가 $userid님을 기다려요.\n도전해볼까요?";
   }
 
+  //TODO: redirect to question card
   List<QuestionButton> _getQuestionButton() {
     return [
       QuestionButton(onTap: () {}),
