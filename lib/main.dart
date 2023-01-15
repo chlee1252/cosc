@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: firstThemeColor,
       ),
-      initialRoute: '/',
+      initialRoute: '/calendar',
       getPages: [
         GetPage(name: '/', page: () => SplashScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
