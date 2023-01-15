@@ -84,7 +84,7 @@ class MainBottomSheet extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
-                vertical: 40.0,
+                vertical: 20.0,
                 horizontal: 20.0,
               ),
               child: Row(
