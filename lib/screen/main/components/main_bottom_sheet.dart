@@ -9,15 +9,16 @@ class MainBottomSheet extends StatelessWidget {
   const MainBottomSheet({
     Key? key,
     required this.userid,
-    required this.language,
+    required this.languageCode,
     this.completed = false,
   }) : super(key: key);
 
   final String userid;
-  final String language;
+  final String languageCode;
   final bool completed;
 
   String _createMessage() {
+    String language = LanguageType.getByCode(languageCode).name;
     return completed
         ? "오늘의 $language 퀴즈를 모두 푸셨군요.\n어떤 문제를 풀었는지 확인해볼까요?"
         : "오늘의 $language 퀴즈가 $userid님을 기다려요.\n도전해볼까요?";
@@ -50,7 +51,7 @@ class MainBottomSheet extends StatelessWidget {
                 print("logo");
               },
               child: Image.asset(
-                LanguageType.getByName(language).asset,
+                LanguageType.getByCode(languageCode).asset,
                 width: 140,
                 height: 140,
               ),

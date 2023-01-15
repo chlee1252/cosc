@@ -23,6 +23,7 @@ class ProfileSection extends StatelessWidget {
             userId: "@$userid",
             profileUrl: "",
             onTap: () {
+              // TODO: redirect to profile page
               print("Click!");
             },
           ),

@@ -1,16 +1,18 @@
 enum LanguageType {
-  python("Python", "assets/image/python.png"),
-  java("Java", "assets/image/python.png"),
-  javascript("JavaScript", "assets/image/python.png");
+  // TODO: change asset to Java, JavaScript image
+  python("py", "Python", "assets/image/python.png"),
+  java("java", "Java", "assets/image/python.png"),
+  javascript("js", "JavaScript", "assets/image/python.png");
 
-  const LanguageType(this.name, this.asset);
+  const LanguageType(this.code, this.name, this.asset);
 
+  final String code;
   final String name;
   final String asset;
 
-  factory LanguageType.getByName(String name) {
+  factory LanguageType.getByCode(String code) {
     return LanguageType.values.firstWhere(
-      (element) => element.name == name,
+      (element) => element.code == code,
       orElse: () => LanguageType.python,
     );
   }
