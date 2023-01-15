@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String userid = "CoScID";
+    String languageCode = "py";
     return Scaffold(
       appBar: const CoscAppBar(),
       body: Column(
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           ),
           ExpandedRoundedCard(
             child: MainBottomSheet(
-              language: "Python",
+              languageCode: languageCode,
               userid: userid,
               completed: false,
             ),
