@@ -71,7 +71,7 @@ class _CalendarState extends State<Calendar> {
       // todayBorderColor: Colors.green,
 
       weekFormat: false,
-      height: 400.0,
+      height: 600.0,
       // selectedDateTime: _selectedDate, // TODO : 선택한 날짜에 색상을 주게 된다면 설정하자.
       // targetDateTime: _targetDateTime,
       customGridViewPhysics: const NeverScrollableScrollPhysics(),

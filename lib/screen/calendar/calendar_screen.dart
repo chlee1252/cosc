@@ -24,21 +24,19 @@ class CalendarScreen extends StatelessWidget {
           children:  [
             const ProfileSection(),
             ExpandedRoundedCard(
-              child: SingleChildScrollView(
-                child: Column(children: [
-                  Center(
-                    child: Calendar(title: "Cosc"),
-                  ),
-                  Container(
-                    child: Text("AD"),
-                    height: 50.0,
-                    width: double.infinity,
-                    color: thirdThemeColor,
-                  ),
-                ],),
-              ),
-            )
-
+              child: Stack(children: [
+                  Calendar(title: "Cosc"),
+                Positioned(
+                  bottom: 10,
+                    child: Container(
+                      child: const Text("AD"),
+                      height: 50.0,
+                      width: MediaQuery.of(context).size.width,
+                      color: thirdThemeColor,
+                    ),
+                ),
+              ],),
+            ),
           ],
         ),
       ),
