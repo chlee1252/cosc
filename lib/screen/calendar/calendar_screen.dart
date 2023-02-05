@@ -29,10 +29,10 @@ class CalendarScreen extends StatelessWidget {
                 Positioned(
                   bottom: 10,
                     child: Container(
-                      child: const Text("AD"),
                       height: 50.0,
                       width: MediaQuery.of(context).size.width,
                       color: thirdThemeColor,
+                      child: const Text("AD"),
                     ),
                 ),
               ],),
