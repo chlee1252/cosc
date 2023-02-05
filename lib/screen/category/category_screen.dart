@@ -1,5 +1,4 @@
 import 'package:cosc/screen/category/components/Language.dart';
-import 'package:cosc/widget/cosc_appbar.dart';
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -11,19 +10,24 @@ class CategoryScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        actions: [Padding(
-          padding: const EdgeInsets.only(right: 20.0),
-          child: Text("완료", style: TextStyle(color: Colors.white, )),
+        actions: const [Padding(
+          padding: EdgeInsets.fromLTRB(0, 20, 20, 0),
+          child: Text("완료", style: TextStyle(color: Colors.white, fontSize: 20)),
         )],),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 10),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("관심 언어를 설정해 주세요!", style: TextStyle(color: Colors.white),),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 8.0),
+                child: Text("관심 언어를 설정해 주세요!", style: TextStyle(color: Colors.white, fontSize: 26),),
+              ),
               GridView.count(
+                crossAxisSpacing: 20,
                 shrinkWrap: true,
-                crossAxisCount: 2, children: [
+                crossAxisCount: 2, children: const [
                 Language(code: "py"),
                 Language(code: "java"),
                 Language(code: "js"),
