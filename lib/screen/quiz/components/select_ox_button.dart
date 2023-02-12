@@ -1,4 +1,5 @@
-import 'package:cosc/constants.dart';
+import 'package:cosc/constants/constants.dart';
+import 'package:cosc/constants/select.dart';
 import 'package:flutter/material.dart';
 
 class SelectOXButton extends StatelessWidget {
@@ -13,7 +14,7 @@ class SelectOXButton extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: isSelected ? thirdPointColor : firstThemeColor,
+          color: isSelected ? selectedBackgroundColor : nonSelectedBackgroundColor,
         ),
         margin: const EdgeInsets.symmetric(horizontal: 30),
         child: isSelected ? const OButton()  : const XButton()

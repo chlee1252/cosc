@@ -1,4 +1,4 @@
-import 'package:cosc/constants.dart';
+import 'package:cosc/constants/constants.dart';
 import 'package:cosc/screen/main/components/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';

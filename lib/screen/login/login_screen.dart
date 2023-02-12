@@ -1,4 +1,4 @@
-import 'package:cosc/constants.dart';
+import 'package:cosc/constants/constants.dart';
 import 'package:cosc/screen/login/components/social_login.dart';
 import 'package:cosc/widget/logo.dart';
 import 'package:flutter/material.dart';

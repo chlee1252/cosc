@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:cosc/constants.dart';
+import 'package:cosc/constants/constants.dart';
 import 'package:cosc/screen/login/components/social_login_button.dart';
 import 'package:flutter/material.dart';
 

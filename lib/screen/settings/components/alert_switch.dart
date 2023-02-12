@@ -1,7 +1,7 @@
 import 'package:cosc/screen/settings/components/setting_space_between_row.dart';
 import 'package:cosc/screen/settings/components/setting_text.dart';
 import 'package:flutter/material.dart';
-import 'package:cosc/constants.dart';
+import 'package:cosc/constants/constants.dart';
 
 class AlertSwitch extends StatefulWidget {
   const AlertSwitch({Key? key}) : super(key: key);

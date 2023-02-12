@@ -1,4 +1,4 @@
-import 'package:cosc/constants.dart';
+import 'package:cosc/constants/constants.dart';
 import 'package:cosc/screen/calendar/components/calendar.dart';
 import 'package:cosc/widget/cosc_appbar.dart';
 import 'package:cosc/widget/expanded_rounded_card.dart';

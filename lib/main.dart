@@ -1,4 +1,4 @@
-import 'package:cosc/constants.dart';
+import 'package:cosc/constants/constants.dart';
 import 'package:cosc/screen/calendar/calendar_screen.dart';
 import 'package:cosc/screen/category/category_screen.dart';
 import 'package:cosc/screen/login/login_screen.dart';
