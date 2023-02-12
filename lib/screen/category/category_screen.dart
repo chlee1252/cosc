@@ -1,4 +1,4 @@
-import 'package:cosc/screen/category/components/Language.dart';
+import 'package:cosc/screen/category/components/language.dart';
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatelessWidget {

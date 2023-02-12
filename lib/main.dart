@@ -3,6 +3,7 @@ import 'package:cosc/screen/calendar/calendar_screen.dart';
 import 'package:cosc/screen/category/category_screen.dart';
 import 'package:cosc/screen/login/login_screen.dart';
 import 'package:cosc/screen/main/home_screen.dart';
+import 'package:cosc/screen/quiz/quiz_sceen.dart';
 import 'package:cosc/screen/settings/setting_screen.dart';
 import 'package:cosc/screen/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: firstThemeColor,
       ),
-      initialRoute: '/category',
+      initialRoute: '/quiz',
       getPages: [
         GetPage(name: '/', page: () => SplashScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/settings', page: () => const SettingScreen()),
         GetPage(name: '/calendar', page: () => const CalendarScreen()),
         GetPage(name: '/category', page: () => const CategoryScreen()),
+        GetPage(name: '/quiz', page: () => const QuizScreen()),
       ],
     );
   }
