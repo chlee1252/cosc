@@ -25,14 +25,19 @@ class CategoryScreen extends StatelessWidget {
                 child: Text("관심 언어를 설정해 주세요!", style: TextStyle(color: Colors.white, fontSize: 26),),
               ),
               GridView.count(
-                crossAxisSpacing: 20,
+                crossAxisSpacing: 30,
+                mainAxisSpacing: 30,
                 shrinkWrap: true,
-                crossAxisCount: 2, children: const [
-                Language(code: "py"),
-                Language(code: "java"),
-                Language(code: "js"),
-                Language(code: "ts"),
-              ],)
+                crossAxisCount: 2,
+                childAspectRatio: MediaQuery.of(context).size.width /
+                    (MediaQuery.of(context).size.height / 1.5),
+                children: const [
+                  Language(code: "py", isSelected: true,),
+                  Language(code: "java"),
+                  Language(code: "js"),
+                  Language(code: "ts"),
+                ],
+              )
             ],
           ),
         ),
