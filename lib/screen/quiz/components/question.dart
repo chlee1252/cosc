@@ -1,5 +1,5 @@
 import 'package:cosc/constants.dart';
-import 'package:cosc/screen/quiz/components/answer_ox.dart';
+import 'package:cosc/screen/quiz/components/answer.dart';
 import 'package:cosc/screen/quiz/components/question_content.dart';
 import 'package:cosc/screen/quiz/components/tag_list.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +23,10 @@ class Question extends StatelessWidget {
               child: Text("Question2",style: TextStyle(color: Colors.white, fontSize: 24),),
             ),
             Column(
-              children:  const [
-                QuestionContent(),
-                TagList(),
-                AnswerOX(),
+              children:  [
+                const QuestionContent(),
+                const TagList(),
+                Answer(),
               ],
             )
           ],

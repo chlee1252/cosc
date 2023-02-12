@@ -17,10 +17,10 @@ class QuestionContent extends StatelessWidget {
                 fontSize: 20
             )
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 30),
-          child: Image.asset("assets/image/question_sample_table.png", width: double.maxFinite),
-        ),
+        // Padding(
+        //   padding: const EdgeInsets.symmetric(vertical: 30),
+        //   child: Image.asset("assets/image/question_sample_table.png", width: double.maxFinite),
+        // ),
       ],
     );
   }
