@@ -30,7 +30,7 @@ class CategoryScreen extends StatelessWidget {
                 shrinkWrap: true,
                 crossAxisCount: 2,
                 childAspectRatio: MediaQuery.of(context).size.width /
-                    (MediaQuery.of(context).size.height / 1.5),
+                    (MediaQuery.of(context).size.height / 1.6),
                 children: const [
                   Language(code: "py", isSelected: true,),
                   Language(code: "java"),
