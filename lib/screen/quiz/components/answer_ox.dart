@@ -10,8 +10,8 @@ class AnswerOX extends StatelessWidget {
       renderBorder: false,
       isSelected: const [false,true],
       children:  const [
-        SelectOXButton(isSelected: true,),
-        SelectOXButton(isSelected: false,)
+        SelectOXButton(ox: "O", isSelected: true),
+        SelectOXButton(ox: "X", isSelected: false)
       ],
     );
   }
