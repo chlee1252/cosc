@@ -1,4 +1,5 @@
 import 'package:cosc/constants.dart';
+import 'package:cosc/screen/quiz/components/select_ox_button.dart';
 import 'package:cosc/screen/quiz/components/tag_list.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class Question extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.99,
-      height: MediaQuery.of(context).size.height * 0.75,
+      height: MediaQuery.of(context).size.height * 0.8,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: secondThemeColor),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -37,7 +38,29 @@ class Question extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 30),
                   child: Image.asset("assets/image/question_sample_table.png", width: double.maxFinite),
                 ),
-                const TagList()
+                const TagList(),
+                /**
+                 * 아래 ANSWER 영역 하나의 컴포넌트로 변경해야 함
+                 * */
+                Column(
+                    children: [
+                      Container(
+                        width: double.maxFinite,
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: const Text("ANSWER", style: TextStyle(color: Colors.white, fontSize: 20))),
+                      /**
+                       * Onclick Event 추가 필요
+                       * */
+                      ToggleButtons(
+                        renderBorder: false,
+                        isSelected: const [false,true],
+                        children:  const [
+                          SelectOXButton(isSelected: true,),
+                          SelectOXButton(isSelected: false,)
+                        ],
+                      )
+                    ],
+                ),
               ],
             )
           ],
@@ -46,3 +69,5 @@ class Question extends StatelessWidget {
     );
   }
 }
+
+
