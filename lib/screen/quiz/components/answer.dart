@@ -3,17 +3,13 @@ import 'package:cosc/screen/quiz/components/answer_ox.dart';
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
+  final String type;
+  final List<String>? choices;
   Answer({
     Key? key,
+    required this.type,
+    this.choices,
   }) : super(key: key);
-
-  /// quiz_screen 에서 부터 prop drill 해야 할까??
-  final List<String> choices = [
-    "가독성이 아주 뛰어남",
-    "함수 안의 함수",
-    "콜백 천국이라는 단어와 관련 있음",
-    "전화를 해 달라는 함수"
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +22,7 @@ class Answer extends StatelessWidget {
         /**
          * Onclick Event 추가 필요
          * */
-        // 문제 타입에 따라 다른 컴포넌트 주입 (컴포넌트 명도 변경 필요)
-        // BuildAnswer(type: "OX")
-        BuildAnswer(type: "MULTI", choices: choices)
+        BuildAnswer(type: type, choices: choices)
       ],
     );
   }

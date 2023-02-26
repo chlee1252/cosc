@@ -1,3 +1,5 @@
+import 'dart:core';
+
 import 'package:cosc/constants/constants.dart';
 import 'package:cosc/screen/quiz/components/answer.dart';
 import 'package:cosc/screen/quiz/components/question_content.dart';
@@ -5,7 +7,18 @@ import 'package:cosc/screen/quiz/components/tag_list.dart';
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
-  const Question({Key? key}) : super(key: key);
+  final String title;
+  final List<String> taglist;
+  final String type;
+  final List<String>? choices;
+
+  const Question({
+    Key? key,
+    required this.title,
+    required this.taglist,
+    required this.type,
+    this.choices
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +31,15 @@ class Question extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(bottom: 40),
-              child: Text("Question2",style: TextStyle(color: Colors.white, fontSize: 24),),
+              child: Text(title ,style: TextStyle(color: Colors.white, fontSize: 24),),
             ),
             Column(
               children:  [
                 const QuestionContent(),
-                const TagList(),
-                Answer(),
+                TagList(tagNameList: taglist,),
+                Answer(type: type, choices: choices),
               ],
             )
           ],

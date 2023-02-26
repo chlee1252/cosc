@@ -1,23 +1,21 @@
-import 'package:cosc/screen/quiz/components/question.dart';
+import 'package:cosc/service/quiz/QuizController.dart';
 import 'package:cosc/widget/cosc_appbar.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:get/get.dart';
 
 class QuizScreen extends StatelessWidget {
-  const QuizScreen({Key? key}) : super(key: key);
-  static const QuestionList = [
-    Question(),
-    Question(),
-    Question(),
-  ];
+  QuizScreen({Key? key}) : super(key: key);
+
+  final QuizController _quizController = Get.put(QuizController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CoscAppBar(),
         body: Swiper(
             itemBuilder: (BuildContext context,int index){
-              return QuestionList[index];
+              return _quizController.QuestionList[index];
             },
             itemCount: 3,
             layout: SwiperLayout.TINDER,
@@ -28,11 +26,4 @@ class QuizScreen extends StatelessWidget {
           )
     );
   }
-
-  // child: Swiper(
-  // itemBuilder: (BuildContext context,int index){
-  // return Question();
-  // },
-  // itemCount: 1,
-  // ),
 }
