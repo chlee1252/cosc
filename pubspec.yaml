@@ -33,7 +33,7 @@ dependencies:
   equatable: ^2.0.5
 
   # 카드 스와이퍼
-  flutter_swiper: 1.1.6
+  card_swiper : ^2.0.1
 
   # 달력 라이브러리 (2개중 하나 사용해보고 좋은거 선택)
   table_calendar: 3.0.8
