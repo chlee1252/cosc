@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:cosc/constants.dart';
-import 'package:cosc/service/auth/AuthController.dart';
+import 'package:cosc/service/auth/auth_controller.dart';
 import 'package:cosc/widget/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
