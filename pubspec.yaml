@@ -23,9 +23,7 @@ dependencies:
   # http call
   http: ^0.13.5
   url_launcher: ^6.1.7
-
-
-  webview_flutter: ^4.0.5
+  uni_links: ^0.5.1
 
   # Configuration
   flutter_config: ^2.0.0 # For Env File
@@ -36,6 +34,9 @@ dependencies:
 
   # dart에서 == 사용해서 객체 비교
   equatable: ^2.0.5
+
+  # secure storage
+  flutter_secure_storage: ^8.0.0
 
   # 카드 스와이퍼
   flutter_swiper: 1.1.6
