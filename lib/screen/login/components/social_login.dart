@@ -2,30 +2,20 @@ import 'dart:io';
 
 import 'package:cosc/constants.dart';
 import 'package:cosc/screen/login/components/social_login_button.dart';
+import 'package:cosc/screen/login/constants/login_type.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({Key? key}) : super(key: key);
 
-  _call() async {
-    String redirectUrl = "cosc://";
-
-    // String uri =
-    //     'http://localhost:8080/oauth2/authorize/google?redirect_uri=$redirectUrl';
-
+  _call(LoginType loginType) async {
     String uri =
-        'http://localhost:8080/oauth2/authorize/github?redirect_uri=http://localhost:8080/user/me';
+        'http://localhost:8080/oauth2/authorize/${loginType.name}?redirect_uri=cosc://callback';
 
-    String urlString = "http://localhost:8080/scheme.html";
-    // Uri url = Uri.parse(
-    //     'http://localhost:8080/oauth2/authorize/github?redirect_uri=$redirectUrl');
-
-    // final response =
-    //     await connect.get('http://localhost:8080/oauth2/authorize/google');
-
-    if (await canLaunchUrlString(urlString)) {
-      await launchUrlString(urlString);
+    if (await canLaunchUrlString(uri)) {
+      await launchUrlString(uri, mode: LaunchMode.externalApplication);
     }
   }
 
@@ -45,11 +35,11 @@ class SocialLogin extends StatelessWidget {
       SocialLoginButton(
           image: 'assets/social/Google.png',
           backgroundColor: Colors.white,
-          onPressed: () => _call()),
+          onPressed: () => _call(LoginType.GOOGLE)),
       SocialLoginButton(
           image: 'assets/social/Kakao.png',
           backgroundColor: kakaoColor,
-          onPressed: () => print("kakao")),
+          onPressed: () => _call(LoginType.KAKAO)),
     ];
 
     if (Platform.isIOS) {
@@ -63,10 +53,3 @@ class SocialLogin extends StatelessWidget {
     return result;
   }
 }
-
-// Navigator.push(
-//               context,
-//               MaterialPageRoute(
-//                   builder: (context) => const LoginWebview(
-//                       url: "http://localhost:8080/oauth2/authorize/github")),
-//             );
