@@ -1,10 +1,10 @@
 import 'dart:io';
 
+import 'package:cosc/commons/data/data.dart';
 import 'package:cosc/constants.dart';
 import 'package:cosc/screen/login/components/social_login_button.dart';
 import 'package:cosc/screen/login/constants/login_type.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class SocialLogin extends StatelessWidget {
@@ -12,11 +12,9 @@ class SocialLogin extends StatelessWidget {
 
   _call(LoginType loginType) async {
     String uri =
-        'http://localhost:8080/oauth2/authorize/${loginType.name}?redirect_uri=cosc://callback';
+        '$BASEURL/oauth2/authorize/${loginType.name}?redirect_uri=cosc://callback';
 
-    if (await canLaunchUrlString(uri)) {
-      await launchUrlString(uri, mode: LaunchMode.externalApplication);
-    }
+    await launchUrlString(uri, mode: LaunchMode.externalApplication);
   }
 
   @override
