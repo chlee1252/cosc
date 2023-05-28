@@ -1,4 +1,4 @@
-import 'package:cosc/screen/login/client/response/token.dart';
+import 'package:cosc/service/auth/response/token.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 

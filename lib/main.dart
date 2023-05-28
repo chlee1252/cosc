@@ -5,7 +5,7 @@ import 'package:cosc/screen/login/login_screen.dart';
 import 'package:cosc/screen/main/home_screen.dart';
 import 'package:cosc/screen/settings/setting_screen.dart';
 import 'package:cosc/screen/splash/splash_screen.dart';
-import 'package:cosc/service/auth/auth_controller.dart';
+import 'package:cosc/service/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

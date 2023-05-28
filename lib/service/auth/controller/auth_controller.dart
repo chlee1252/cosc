@@ -1,6 +1,6 @@
 import 'package:cosc/commons/data/data.dart';
-import 'package:cosc/screen/login/client/auth_repository.dart';
-import 'package:cosc/screen/login/client/response/token.dart';
+import 'package:cosc/service/auth/repository/auth_repository.dart';
+import 'package:cosc/service/auth/response/token.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:uni_links/uni_links.dart';
