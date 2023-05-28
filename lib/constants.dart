@@ -19,6 +19,15 @@ final Color secondPointColor =
 final Color thirdPointColor =
     ColorUtils.convertHexToColor(hexColorCode: "#FFAF7B");
 
+final Color secondPointVeryLight =
+HSLColor.fromColor(secondPointColor).withLightness(0.9).toColor();
+
+final Color secondPointMiddleLight =
+HSLColor.fromColor(secondPointColor).withLightness(0.7).toColor();
+
+final Color secondPointNoLight =
+HSLColor.fromColor(secondPointColor).withLightness(0.6).toColor();
+
 final Color redAccentColor =
     ColorUtils.convertHexToColor(hexColorCode: "#D04F4F");
 
