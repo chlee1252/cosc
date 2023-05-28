@@ -1,13 +1,10 @@
 import 'package:cosc/commons/data/data.dart';
-import 'package:cosc/service/auth/repository/auth_repository.dart';
-import 'package:cosc/service/auth/response/token.dart';
-import 'package:dio/dio.dart';
+import 'package:cosc/service/auth/controller/token_service.dart';
 import 'package:get/get.dart';
 import 'package:uni_links/uni_links.dart';
 
 class AuthController extends GetxController {
   var isLogin = RxBool(false);
-
 
   @override
   void onInit() {
@@ -48,24 +45,10 @@ class AuthController extends GetxController {
 
   checkToken() async {
     try {
-      final authRepository = AuthRepository(Dio(), baseUrl: "$BASE_URL/auth");
-      final accessToken = await storage.read(key: ACCESS_TOKEN_KEY);
-      final refreshToken = await storage.read(key: REFRESH_TOKEN_KEY);
-
-      final token = Token(accessToken: accessToken, refreshToken: refreshToken);
-
-      final newAccessToken = await authRepository.getAccessToken('Bearer ${token.accessToken}', token);
-
-      await _checkAuth(newAccessToken);
+      bool result = await TokenService().setNewToken();
+      isLogin.value = result;
     } catch (e) {
       isLogin.value = false;
     }
   }
-
-  _checkAuth(Token token) async {
-    await storage.write(key: ACCESS_TOKEN_KEY, value: token.accessToken);
-    await storage.write(key: REFRESH_TOKEN_KEY, value: token.refreshToken);
-    isLogin.value = true;
-  }
-
 }

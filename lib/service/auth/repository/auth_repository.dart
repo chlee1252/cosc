@@ -8,7 +8,6 @@ part 'auth_repository.g.dart';
 abstract class AuthRepository {
   factory AuthRepository(Dio dio, {String baseUrl}) = _AuthRepository;
 
-
   @POST("/refresh")
-  Future<Token> getAccessToken(@Header("Authorization") String accessToken, @Body() Token token);
+  Future<Token> getAccessToken(@Body() Token token);
 }

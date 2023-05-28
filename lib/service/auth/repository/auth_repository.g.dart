@@ -21,14 +21,10 @@ class _AuthRepository implements AuthRepository {
   String? baseUrl;
 
   @override
-  Future<Token> getAccessToken(
-    accessToken,
-    token,
-  ) async {
+  Future<Token> getAccessToken(token) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': accessToken};
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(token.toJson());
     final _result =
