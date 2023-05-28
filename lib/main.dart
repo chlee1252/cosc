@@ -3,15 +3,18 @@ import 'package:cosc/screen/login/login_screen.dart';
 import 'package:cosc/screen/main/home_screen.dart';
 import 'package:cosc/screen/settings/setting_screen.dart';
 import 'package:cosc/screen/splash/splash_screen.dart';
+import 'package:cosc/service/auth/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final _authController = Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +24,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: firstThemeColor,
       ),
-      initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => SplashScreen()),
+        GetPage(name: '/', page: () => const SplashScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
         GetPage(name: '/home', page: () => const HomeScreen()),
         GetPage(name: '/settings', page: () => const SettingScreen()),
