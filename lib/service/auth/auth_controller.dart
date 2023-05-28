@@ -48,7 +48,7 @@ class AuthController extends GetxController {
 
   checkToken() async {
     try {
-      final authRepository = AuthRepository(Dio());
+      final authRepository = AuthRepository(Dio(), baseUrl: "$BASE_URL/auth");
       final accessToken = await storage.read(key: ACCESS_TOKEN_KEY);
       final refreshToken = await storage.read(key: REFRESH_TOKEN_KEY);
 

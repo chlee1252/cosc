@@ -12,7 +12,7 @@ class SocialLogin extends StatelessWidget {
 
   _call(LoginType loginType) async {
     String uri =
-        '$BASEURL/oauth2/authorize/${loginType.name}?redirect_uri=cosc://callback';
+        '$BASE_URL/oauth2/authorize/${loginType.name}?redirect_uri=cosc://callback';
 
     await launchUrlString(uri, mode: LaunchMode.externalApplication);
   }
