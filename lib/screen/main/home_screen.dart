@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
-  final UserController userController = Get.find();
+  final UserController _userController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,13 @@ class HomeScreen extends StatelessWidget {
       appBar: const CoscAppBar(),
       body: Column(
         children: [
-          ProfileSection(user: userController.user.value ?? User()),
+          ProfileSection(user: _userController.user.value ?? User()),
           const SizedBox(
             height: 15.0,
           ),
           ExpandedRoundedCard(
             child: MainBottomSheet(
-              user: userController.user.value ?? User(),
+              user: _userController.user.value ?? User(),
               completed: false,
             ),
           ),
