@@ -15,7 +15,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CoscAppBar(),
+      appBar: CoscAppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.calendar_month_rounded),
+            onPressed: () => Get.toNamed("/calendar"),
+          )
+        ],
+      ),
       body: Column(
         children: [
           ProfileSection(user: _userController.user.value ?? User()),
