@@ -14,7 +14,7 @@ class ProfileSection extends StatelessWidget {
     String userid = user.userName;
     int solved = user.solved;
     int correct = user.correct;
-    double percent = solved > 0 ? (correct / solved * 100) : 0.0;
+    int percent = solved > 0 ? (correct / solved * 100) ~/ 1 : 0;
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 23.0,
@@ -66,12 +66,12 @@ class ProfileSection extends StatelessWidget {
                     padding: EdgeInsets.zero,
                     animation: true,
                     barRadius: const Radius.circular(20.0),
-                    lineHeight: 35.0,
+                    lineHeight: 32.0,
                     linearGradient: progressBarGradient,
-                    percent: percent,
+                    percent: solved > 0 ? correct / solved : 0,
                     backgroundColor: thirdThemeColor,
                     center: Text(
-                      "${percent ~/ 1}",
+                      "$percent",
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
