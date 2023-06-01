@@ -1,4 +1,5 @@
 import 'package:cosc/constants.dart';
+import 'package:cosc/domain/user/user.dart';
 import 'package:cosc/screen/calendar/components/calendar.dart';
 import 'package:cosc/widget/cosc_appbar.dart';
 import 'package:cosc/widget/expanded_rounded_card.dart';
@@ -22,7 +23,7 @@ class CalendarScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
-            const ProfileSection(),
+            ProfileSection(user: User(),),
             ExpandedRoundedCard(
               child: Stack(children: [
                   Calendar(title: "Cosc"),

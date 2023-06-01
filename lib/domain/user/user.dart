@@ -1,6 +1,9 @@
 class User {
   final String userName;
   final String profileUrl;
+  final int solved;
+  final int correct;
+  final String language;
 
-  User({required this.userName, required this.profileUrl});
+  User({this.userName = "CoScId", this.profileUrl = "", this.language = "py", this.solved = 0, this.correct = 0});
 }

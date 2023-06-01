@@ -1,5 +1,6 @@
 import 'package:cosc/constants.dart';
 import 'package:cosc/service/auth/controller/auth_controller.dart';
+import 'package:cosc/service/user/controller/user_controller.dart';
 import 'package:cosc/widget/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   final AuthController authController = Get.find();
+  final UserController userController = Get.put(UserController());
 
   @override
   void initState() {
@@ -23,7 +25,8 @@ class _SplashScreenState extends State<SplashScreen> {
   _checkAuth() async {
     await authController.checkToken();
     if (authController.isLogin.value) {
-      Future.delayed(const Duration(milliseconds: 500), () {
+      Future.delayed(const Duration(milliseconds: 500), () async {
+        await userController.fetchUserInformation();
         Get.offAndToNamed('home');
       });
     } else {
