@@ -6,6 +6,7 @@ import 'package:cosc/screen/main/components/question_button.dart';
 import 'package:cosc/screen/main/enum/language_type.dart';
 import 'package:cosc/service/user/controller/user_service.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MainBottomSheet extends StatelessWidget {
   const MainBottomSheet({
@@ -48,7 +49,7 @@ class MainBottomSheet extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () async {
-                await UserService().getUser();
+                Get.toNamed("/category");
               },
               child: Image.asset(
                 LanguageType.getByCode(user.language).asset,
