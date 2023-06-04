@@ -1,9 +1,8 @@
 enum LanguageType {
-  // TODO: change asset to Java, JavaScript image
-  python("py", "Python", "assets/image/python.png"),
+  python("python", "Python", "assets/image/python.png"),
   java("java", "Java", "assets/image/java.png"),
-  javascript("js", "JavaScript", "assets/image/javascript.png"),
-  typescript("ts", "TypeScript", "assets/image/typescript.png");
+  javascript("javascript", "JavaScript", "assets/image/javascript.png"),
+  typescript("typescript", "TypeScript", "assets/image/typescript.png");
 
   const LanguageType(this.code, this.name, this.asset);
 
