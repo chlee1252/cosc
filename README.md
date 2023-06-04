@@ -74,3 +74,14 @@
 
 ## Branch 전략
 - Git Flow (?) -> main, develop, feature, hotfix, release
+
+## RETROFIT
+- 신규 Repository
+Repository 및 Object 생성 뒤 해당 코멘드 실행.
+g.dart 파일 생성 확인하기.
+
+- 기존 Repository 수정
+g.dart 파일 제거 뒤 아래 코멘드 실행.
+```
+flutter pub run build_runner build       
+```

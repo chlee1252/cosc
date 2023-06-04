@@ -1,11 +1,21 @@
 import 'dart:io';
 
+import 'package:cosc/commons/data/data.dart';
 import 'package:cosc/constants.dart';
 import 'package:cosc/screen/login/components/social_login_button.dart';
+import 'package:cosc/screen/login/constants/login_type.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class SocialLogin extends StatelessWidget {
   const SocialLogin({Key? key}) : super(key: key);
+
+  _call(LoginType loginType) async {
+    String uri =
+        '$BASE_URL/oauth2/authorize/${loginType.name}?redirect_uri=cosc://callback';
+
+    await launchUrlString(uri, mode: LaunchMode.externalApplication);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,21 +23,21 @@ class SocialLogin extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.75,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: _createButtons(),
+        children: _createButtons(context),
       ),
     );
   }
 
-  _createButtons() {
+  _createButtons(BuildContext context) {
     List<Widget> result = [
       SocialLoginButton(
           image: 'assets/social/Google.png',
           backgroundColor: Colors.white,
-          onPressed: () => print("google")),
+          onPressed: () => _call(LoginType.GOOGLE)),
       SocialLoginButton(
           image: 'assets/social/Kakao.png',
           backgroundColor: kakaoColor,
-          onPressed: () => print("kakao")),
+          onPressed: () => _call(LoginType.KAKAO)),
     ];
 
     if (Platform.isIOS) {
