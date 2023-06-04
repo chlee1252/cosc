@@ -1,17 +1,20 @@
 import 'package:cosc/constants.dart';
+import 'package:cosc/domain/user/user.dart';
 import 'package:cosc/screen/main/components/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class ProfileSection extends StatelessWidget {
-  const ProfileSection({Key? key}) : super(key: key);
+  const ProfileSection({Key? key, required this.user}) : super(key: key);
+
+  final User user;
 
   @override
   Widget build(BuildContext context) {
-    String userid = "CoScId";
-    int total = 3;
-    int score = 2;
-    int percent = (score / total * 100) ~/ 1;
+    String userid = user.userName;
+    int solved = user.solved;
+    int correct = user.correct;
+    double correctRatio = solved > 0 ? correct / solved : 0;
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 23.0,
@@ -21,7 +24,7 @@ class ProfileSection extends StatelessWidget {
         children: [
           Profile(
             userId: "@$userid",
-            profileUrl: "",
+            profileUrl: user.profileUrl,
             onTap: () {
               // TODO: redirect to profile page
               print("Click!");
@@ -40,7 +43,7 @@ class ProfileSection extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        "푼 문제수: $total",
+                        "푼 문제수: $solved",
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 15.0,
@@ -48,7 +51,7 @@ class ProfileSection extends StatelessWidget {
                       ),
                       const Spacer(),
                       Text(
-                        "맞춘 문제 수: $score",
+                        "맞춘 문제 수: $correct",
                         style: const TextStyle(
                           color: Colors.white,
                           fontSize: 15.0,
@@ -63,12 +66,12 @@ class ProfileSection extends StatelessWidget {
                     padding: EdgeInsets.zero,
                     animation: true,
                     barRadius: const Radius.circular(20.0),
-                    lineHeight: 35.0,
+                    lineHeight: 32.0,
                     linearGradient: progressBarGradient,
-                    percent: score / total,
+                    percent: correctRatio,
                     backgroundColor: thirdThemeColor,
                     center: Text(
-                      "$percent",
+                      "${correctRatio * 100  ~/ 1}",
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

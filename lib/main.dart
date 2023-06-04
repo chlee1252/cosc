@@ -22,14 +22,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Cosc',
       theme: ThemeData(
         scaffoldBackgroundColor: firstThemeColor,
       ),
       getPages: [
         GetPage(name: '/', page: () => const SplashScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
-        GetPage(name: '/home', page: () => const HomeScreen()),
+        GetPage(name: '/home', page: () => HomeScreen()),
         GetPage(name: '/settings', page: () => const SettingScreen()),
         GetPage(name: '/calendar', page: () => const CalendarScreen()),
         GetPage(name: '/category', page: () => const CategoryScreen()),

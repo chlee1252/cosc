@@ -3,6 +3,7 @@ import 'package:cosc/screen/settings/components/setting_box.dart';
 import 'package:cosc/screen/settings/components/setting_text.dart';
 import 'package:cosc/screen/settings/components/version.dart';
 import 'package:cosc/screen/settings/components/yes_no_dialog.dart';
+import 'package:cosc/widget/cosc_appbar.dart';
 import 'package:flutter/material.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CoscAppBar(),
       body: ListView(
           children: [
             SettingBox(onTapCallback: () {}, child: const AlertSwitch()),

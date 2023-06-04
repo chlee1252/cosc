@@ -1,27 +1,27 @@
 import 'dart:core';
 
+import 'package:cosc/domain/user/user.dart';
 import 'package:cosc/screen/main/components/check_button.dart';
 import 'package:cosc/screen/main/components/question_button.dart';
 import 'package:cosc/screen/main/enum/language_type.dart';
+import 'package:cosc/service/user/controller/user_service.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MainBottomSheet extends StatelessWidget {
   const MainBottomSheet({
     Key? key,
-    required this.userid,
-    required this.languageCode,
-    this.completed = false,
+    this.completed = false, required this.user,
   }) : super(key: key);
 
-  final String userid;
-  final String languageCode;
   final bool completed;
+  final User user;
 
   String _createMessage() {
-    String language = LanguageType.getByCode(languageCode).name;
+    String language = LanguageType.getByCode(user.language).name;
     return completed
         ? "오늘의 $language 퀴즈를 모두 푸셨군요.\n어떤 문제를 풀었는지 확인해볼까요?"
-        : "오늘의 $language 퀴즈가 $userid님을 기다려요.\n도전해볼까요?";
+        : "오늘의 $language 퀴즈가 ${user.userName}님을 기다려요.\n도전해볼까요?";
   }
 
   //TODO: redirect to question card
@@ -48,11 +48,11 @@ class MainBottomSheet extends StatelessWidget {
         child: Column(
           children: [
             GestureDetector(
-              onTap: () {
-                print("logo");
+              onTap: () async {
+                Get.toNamed("/category");
               },
               child: Image.asset(
-                LanguageType.getByCode(languageCode).asset,
+                LanguageType.getByCode(user.language).asset,
                 width: 140,
                 height: 140,
               ),
@@ -60,7 +60,7 @@ class MainBottomSheet extends StatelessWidget {
             const SizedBox(height: 50.0),
             FittedBox(
               child: Text(
-                "안녕하세요, $userid님!",
+                "안녕하세요, ${user.userName}님!",
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.white,

@@ -1,4 +1,5 @@
 import 'package:cosc/screen/category/components/Language.dart';
+import 'package:cosc/screen/main/enum/language_type.dart';
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -31,11 +32,11 @@ class CategoryScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 childAspectRatio: MediaQuery.of(context).size.width /
                     (MediaQuery.of(context).size.height / 1.6),
-                children: const [
-                  Language(code: "py", isSelected: true,),
-                  Language(code: "java"),
-                  Language(code: "js"),
-                  Language(code: "ts"),
+                children: [
+                  Language(code: LanguageType.python.code, isSelected: true,),
+                  Language(code: LanguageType.java.code),
+                  Language(code: LanguageType.javascript.code),
+                  Language(code: LanguageType.typescript.code),
                 ],
               )
             ],

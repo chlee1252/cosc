@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'logo.dart';
 
 class CoscAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CoscAppBar({Key? key}) : super(key: key);
+  const CoscAppBar({Key? key, this.actions}) : super(key: key);
+
+  final List<Widget>? actions;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,7 @@ class CoscAppBar extends StatelessWidget implements PreferredSizeWidget {
         size: appBarLogoSize,
         color: Colors.white,
       ),
+      actions: actions,
     );
   }
 
