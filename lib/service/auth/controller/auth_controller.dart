@@ -1,5 +1,6 @@
 import 'package:cosc/commons/data/data.dart';
 import 'package:cosc/service/auth/controller/token_service.dart';
+import 'package:cosc/service/user/controller/user_controller.dart';
 import 'package:get/get.dart';
 import 'package:uni_links/uni_links.dart';
 
@@ -39,6 +40,7 @@ class AuthController extends GetxController {
       await storage.write(key: REFRESH_TOKEN_KEY, value: refreshToken);
 
       isLogin.value = true;
+      await Get.find<UserController>().fetchUserInformation();
       Get.offAndToNamed("home");
     }
   }

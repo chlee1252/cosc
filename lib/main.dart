@@ -6,6 +6,7 @@ import 'package:cosc/screen/main/home_screen.dart';
 import 'package:cosc/screen/settings/setting_screen.dart';
 import 'package:cosc/screen/splash/splash_screen.dart';
 import 'package:cosc/service/auth/controller/auth_controller.dart';
+import 'package:cosc/service/user/controller/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
   final _authController = Get.put(AuthController());
+  final _userController = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {
