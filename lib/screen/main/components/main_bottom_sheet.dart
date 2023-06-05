@@ -10,16 +10,14 @@ import 'package:get/get.dart';
 class MainBottomSheet extends StatelessWidget {
   const MainBottomSheet({
     Key? key,
-    this.completed = false,
     required this.user,
   }) : super(key: key);
 
-  final bool completed;
   final User user;
 
   String _createMessage() {
     String language = LanguageType.getByCode(user.language).name;
-    return completed
+    return user.completed
         ? "오늘의 $language 퀴즈를 모두 푸셨군요.\n어떤 문제를 풀었는지 확인해볼까요?"
         : "오늘의 $language 퀴즈가 ${user.userName}님을 기다려요.\n도전해볼까요?";
   }
@@ -85,7 +83,7 @@ class MainBottomSheet extends StatelessWidget {
                 vertical: 20.0,
                 horizontal: 20.0,
               ),
-              child: completed ? _getCheckButtons() : _getStartButton(),
+              child: user.completed ? _getCheckButtons() : _getStartButton(),
             ),
           ],
         ),

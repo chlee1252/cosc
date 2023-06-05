@@ -12,6 +12,7 @@ UserResponse _$UserResponseFromJson(Map<String, dynamic> json) => UserResponse(
       solved: json['solved'] as int?,
       tagName: json['tagName'] as String?,
       uid: json['uid'] as String?,
+      dailyQuizStarted: json['dailyQuizStarted'] as bool?,
     );
 
 Map<String, dynamic> _$UserResponseToJson(UserResponse instance) =>
@@ -21,4 +22,5 @@ Map<String, dynamic> _$UserResponseToJson(UserResponse instance) =>
       'correct': instance.correct,
       'profile': instance.profile,
       'tagName': instance.tagName,
+      'dailyQuizStarted': instance.dailyQuizStarted,
     };

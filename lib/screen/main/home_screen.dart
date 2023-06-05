@@ -12,6 +12,10 @@ class HomeScreen extends StatelessWidget {
 
   final UserController _userController = Get.find();
 
+  _getUserInformation() {
+    return _userController.user.value ?? User();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +29,13 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ProfileSection(user: _userController.user.value ?? User()),
+          ProfileSection(user: _getUserInformation()),
           const SizedBox(
             height: 15.0,
           ),
           ExpandedRoundedCard(
             child: MainBottomSheet(
-              user: _userController.user.value ?? User(),
-              completed: false,
+              user: _getUserInformation(),
             ),
           ),
         ],

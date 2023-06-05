@@ -9,8 +9,9 @@ class UserResponse {
   int? correct;
   String? profile;
   String? tagName;
+  bool? dailyQuizStarted;
 
-  UserResponse({this.correct, this.profile, this.solved, this.tagName, this.uid});
+  UserResponse({this.correct, this.profile, this.solved, this.tagName, this.uid, this.dailyQuizStarted});
 
   factory UserResponse.fromJson(Map<String, dynamic> json) => _$UserResponseFromJson(json);
   Map<String, dynamic> toJson() => _$UserResponseToJson(this);
