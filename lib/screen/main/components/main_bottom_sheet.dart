@@ -1,17 +1,17 @@
 import 'dart:core';
 
 import 'package:cosc/domain/user/user.dart';
-import 'package:cosc/screen/main/components/check_button.dart';
-import 'package:cosc/screen/main/components/question_button.dart';
+import 'package:cosc/screen/main/components/result_buttons.dart';
+import 'package:cosc/screen/main/components/rounded_text_button.dart';
 import 'package:cosc/screen/main/enum/language_type.dart';
-import 'package:cosc/service/user/controller/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainBottomSheet extends StatelessWidget {
   const MainBottomSheet({
     Key? key,
-    this.completed = false, required this.user,
+    this.completed = false,
+    required this.user,
   }) : super(key: key);
 
   final bool completed;
@@ -24,21 +24,17 @@ class MainBottomSheet extends StatelessWidget {
         : "오늘의 $language 퀴즈가 ${user.userName}님을 기다려요.\n도전해볼까요?";
   }
 
-  //TODO: redirect to question card
-  List<QuestionButton> _getQuestionButton() {
-    return [
-      QuestionButton(onTap: () {}),
-      QuestionButton(onTap: () {}),
-      QuestionButton(onTap: () {}),
-    ];
+  _getStartButton() {
+    return RoundedTextButton(
+      onPressed: () {
+        //TODO: redirect to question card
+      },
+      text: "퀴즈 시작하기!",
+    );
   }
 
-  List<CheckButton> _getCheckButtons() {
-    return [
-      CheckButton(onTap: () {}),
-      CheckButton(onTap: () {}),
-      CheckButton(onTap: () {}),
-    ];
+  _getCheckButtons() {
+    return const ResultButtons();
   }
 
   @override
@@ -89,11 +85,7 @@ class MainBottomSheet extends StatelessWidget {
                 vertical: 20.0,
                 horizontal: 20.0,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: completed ? _getCheckButtons() : _getQuestionButton(),
-              ),
+              child: completed ? _getCheckButtons() : _getStartButton(),
             ),
           ],
         ),
