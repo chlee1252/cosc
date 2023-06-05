@@ -15,16 +15,35 @@ class Profile extends StatelessWidget {
   final String profileUrl;
   final GestureTapCallback onTap;
 
+  _getProfileAvatar() {
+    if (profileUrl.isEmpty) {
+      return CircleAvatar(
+        radius: 35.0,
+        backgroundColor: secondThemeColor,
+        child: const Padding(
+          padding: EdgeInsets.all(10),
+          child: Image(
+            image: AssetImage("assets/image/quokka.png"),
+            fit: BoxFit.contain,
+          ),
+        ),
+      );
+    }
+
+    return CircleAvatar(
+      radius: 35.0,
+      backgroundColor: Colors.transparent,
+      backgroundImage: NetworkImage(profileUrl),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
           onTap: onTap,
-          child: CircleAvatar(
-            radius: 35.0,
-            backgroundColor: secondPointColor,
-          ),
+          child: _getProfileAvatar(),
         ),
         const SizedBox(
           height: 10.0,
