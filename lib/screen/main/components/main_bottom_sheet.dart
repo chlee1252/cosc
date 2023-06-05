@@ -4,6 +4,7 @@ import 'package:cosc/domain/user/user.dart';
 import 'package:cosc/screen/main/components/result_buttons.dart';
 import 'package:cosc/screen/main/components/rounded_text_button.dart';
 import 'package:cosc/screen/main/enum/language_type.dart';
+import 'package:cosc/service/quiz/controller/quiz_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -32,7 +33,10 @@ class MainBottomSheet extends StatelessWidget {
   }
 
   _getCheckButtons() {
-    return const ResultButtons();
+    final quizController = Get.find<QuizController>();
+    return ResultButtons(
+      quizzes: quizController.getQuizzes,
+    );
   }
 
   @override
