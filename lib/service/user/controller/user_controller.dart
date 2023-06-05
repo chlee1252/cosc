@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 class UserController extends GetxController {
   var user = Rxn<User>();
 
+  User get getUser => user.value ?? User();
+
   fetchUserInformation() async {
     UserService userService = UserService();
     user.value = await userService.getUser();
