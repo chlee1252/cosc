@@ -1,4 +1,4 @@
-import 'package:cosc/screen/main/components/check_button.dart';
+import 'package:cosc/screen/main/components/lottie_button.dart';
 import 'package:flutter/material.dart';
 
 class ResultButtons extends StatelessWidget {
@@ -10,9 +10,18 @@ class ResultButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        CheckButton(onTap: () {}),
-        CheckButton(onTap: () {}),
-        CheckButton(onTap: () {}),
+        LottieButton(
+          onTap: () {},
+          lottieAsset: "assets/lottie/incorrect.json",
+        ),
+        LottieButton(
+          onTap: () {},
+          lottieAsset: "assets/lottie/correct.json",
+        ),
+        LottieButton(
+          onTap: () {},
+          lottieAsset: "assets/lottie/correct.json",
+        ),
       ],
     );
   }
