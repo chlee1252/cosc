@@ -25,12 +25,12 @@ class _SplashScreenState extends State<SplashScreen> {
   _checkAuth() async {
     await authController.checkToken();
     if (authController.isLogin.value) {
-      Future.delayed(const Duration(milliseconds: 500), () async {
+      Future.delayed(const Duration(milliseconds: 1000), () async {
         await userController.fetchUserInformation();
         Get.offAndToNamed('home');
       });
     } else {
-      Future.delayed(const Duration(milliseconds: 500), () {
+      Future.delayed(const Duration(milliseconds: 1000), () {
         Get.offAndToNamed('login');
       });
     }
@@ -38,12 +38,23 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Logo(
-          size: mainLogoSize,
-          color: Colors.white,
-        )
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Logo(
+              size: mainLogoSize,
+              color: Colors.white,
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            CircularProgressIndicator(
+              color: Colors.white,
+            ),
+          ],
+        ),
       ),
     );
   }

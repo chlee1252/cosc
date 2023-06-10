@@ -26,7 +26,7 @@ class ProfileSection extends StatelessWidget {
             userId: "@$userid",
             profileUrl: user.profileUrl,
             onTap: () {
-              // TODO: redirect to profile page
+              // TODO: choose from the gallery
               print("Click!");
             },
           ),
@@ -71,7 +71,7 @@ class ProfileSection extends StatelessWidget {
                     percent: correctRatio,
                     backgroundColor: thirdThemeColor,
                     center: Text(
-                      "${correctRatio * 100  ~/ 1}",
+                      "${correctRatio * 100 ~/ 1}",
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
