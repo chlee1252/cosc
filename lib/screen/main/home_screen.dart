@@ -1,4 +1,7 @@
-import 'package:cosc/screen/main/components/main_bottom_sheetmport 'package:cosc/widget/profile_section.dart';
+import 'package:cosc/screen/main/components/main_bottom_sheet.dart';
+import 'package:cosc/widget/cosc_appbar.dart';
+import 'package:cosc/widget/expanded_rounded_card.dart';
+import 'package:cosc/widget/profile_section.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
