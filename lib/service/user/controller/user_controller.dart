@@ -12,9 +12,12 @@ class UserController extends GetxController {
     UserService userService = UserService();
     user.value = await userService.getUser();
 
-    if (user.value != null && user.value?.completed == true) {
+    if (_isUserCompletedQuiz()) {
       final QuizController quizController = Get.find();
       await quizController.fetchDailyQuiz();
     }
   }
+
+  bool _isUserCompletedQuiz() =>
+      user.value != null && user.value?.completed == true;
 }
