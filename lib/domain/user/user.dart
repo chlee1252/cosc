@@ -9,7 +9,7 @@ class User {
   User(
       {this.userName = "CoScId",
       this.profileUrl = "",
-      this.language = "python",
+      this.language = "py",
       this.solved = 0,
       this.correct = 0,
       this.completed = false});
