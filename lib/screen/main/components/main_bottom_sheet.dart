@@ -4,18 +4,17 @@ import 'package:cosc/domain/user/user.dart';
 import 'package:cosc/screen/main/components/result_buttons.dart';
 import 'package:cosc/screen/main/components/rounded_text_button.dart';
 import 'package:cosc/screen/main/enum/language_type.dart';
+import 'package:cosc/service/quiz/controller/quiz_controller.dart';
+import 'package:cosc/service/user/controller/user_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainBottomSheet extends StatelessWidget {
-  const MainBottomSheet({
-    Key? key,
-    required this.user,
-  }) : super(key: key);
+  MainBottomSheet({Key? key}) : super(key: key);
 
-  final User user;
+  final UserController _userController = Get.find();
 
-  String _createMessage() {
+  String _createMessage(User user) {
     String language = LanguageType.getByCode(user.language).name;
     return user.completed
         ? "오늘의 $language 퀴즈를 모두 푸셨군요.\n어떤 문제를 풀었는지 확인해볼까요?"
@@ -32,11 +31,15 @@ class MainBottomSheet extends StatelessWidget {
   }
 
   _getCheckButtons() {
-    return const ResultButtons();
+    final quizController = Get.find<QuizController>();
+    return ResultButtons(
+      quizzes: quizController.getQuizzes,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+    final User user = _userController.getUser;
     return Center(
       child: SingleChildScrollView(
         child: Column(
@@ -69,7 +72,7 @@ class MainBottomSheet extends StatelessWidget {
               ),
               child: FittedBox(
                 child: Text(
-                  _createMessage(),
+                  _createMessage(user),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,

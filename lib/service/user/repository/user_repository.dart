@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:cosc/service/user/request/tag_request.dart';
 import 'package:cosc/service/user/response/user_response.dart';
 import 'package:dio/dio.dart';

@@ -1,5 +1,4 @@
 import 'package:cosc/constants.dart';
-import 'package:cosc/domain/user/user.dart';
 import 'package:cosc/screen/calendar/components/calendar.dart';
 import 'package:cosc/widget/cosc_appbar.dart';
 import 'package:cosc/widget/expanded_rounded_card.dart';
@@ -30,27 +29,27 @@ class CalendarScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children:  [
-            ProfileSection(user: User(),),
+          children: [
+            ProfileSection(),
             ExpandedRoundedCard(
-              child: Stack(children: [
+              child: Stack(
+                children: [
                   Calendar(title: "Cosc"),
-                Positioned(
-                  bottom: 10,
+                  Positioned(
+                    bottom: 10,
                     child: Container(
                       height: 50.0,
                       width: MediaQuery.of(context).size.width,
                       color: thirdThemeColor,
                       child: const Text("AD"),
                     ),
-                ),
-              ],),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
       ),
     );
-
   }
 }
-

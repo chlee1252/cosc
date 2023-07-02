@@ -1,16 +1,19 @@
 import 'package:cosc/constants.dart';
 import 'package:cosc/domain/user/user.dart';
 import 'package:cosc/screen/main/components/profile.dart';
+import 'package:cosc/service/user/controller/user_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class ProfileSection extends StatelessWidget {
-  const ProfileSection({Key? key, required this.user}) : super(key: key);
+  ProfileSection({Key? key}) : super(key: key);
 
-  final User user;
+  final UserController _userController = Get.find();
 
   @override
   Widget build(BuildContext context) {
+    final User user = _userController.getUser;
     String userid = user.userName;
     int solved = user.solved;
     int correct = user.correct;
